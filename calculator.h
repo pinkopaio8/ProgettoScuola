@@ -1,5 +1,8 @@
 #pragma once
 
+enum Scelta {
+	Iperbole = 1, Parabola, Elisse, Circonferenza; };
+
 class Coniche {
 public:
 	int a, b, c, x, y;
@@ -32,8 +35,8 @@ public:
 class Iperbole : public Coniche {
 
 public:
-	virtual double asintoti();
-	virtual double eccentricità();
+	virtual void asintoti(int a, int b, int c, int x, int y);
+	virtual double equazioneCart(int a, int b, int c, int x, int y);
 
 
 
@@ -42,18 +45,18 @@ public:
 class Elisse : public Coniche {
 
 public:
-	virtual double asseMaggiore();
-	virtual double asseMinore();
-	virtual double eccentricita();
+	virtual double asseMaggiore(int a);
+	virtual double asseMinore(int b);
+	virtual double equazioneCart(int a, int b, int c, int x, int y);
 
 
 
 };
-#define Pi 3,1415926; //3,1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
+
 class Circonferenza{
 
 public:
-
+#define Pi 3,14159;
 	virtual double centro();
 	virtual double realta();
 	virtual double raggio(int a, int b, int c);

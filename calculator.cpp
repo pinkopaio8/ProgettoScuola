@@ -26,14 +26,35 @@ double Parabole::Coniche::interAssX(int a, int b, int c, int x)
 {
 	y = (a * (x ^ 2)) + (b * x) + c;
 	x = 0;
-	return y;
+	return x;
 }
 
 double Parabole::Coniche::interAssY(int a, int b, int c, int y)
 {
 	x = (a * (y ^ 2)) + (b * y) + c;
 	y = 0;
+	return y;
+}
+
+double Iperbole::equazioneCart(int a, int b, int c, int x, int y)
+{
+	return (x ^ 2 / a ^ 2) - (y ^ 2 / b ^ 2) - 1;
+}
+
+
+double Iperbole::Coniche::interAssX(int a, int b, int c, int x)
+{
+	
+	x = a;
+	y = 0;
 	return x;
+}
+
+double Iperbole::Coniche::interAssY(int a, int b, int c, int y)
+{
+	y = b;
+	x = 0;
+	return y;
 }
 
 void Parabole::Coniche::vertice(int a, int b, int c)
@@ -64,6 +85,59 @@ double Circonferenza::raggio(int a, int b, int c)
 
 double Circonferenza::equazioneCart()
 {
-	double r = Circonferenza::raggio();
+	double *r;
+	r = *raggio;
 	return 2 * r * Pi;
+	//riguardare tutto
 }
+
+void Elisse::Coniche::vertice(int a, int b, int c)
+{
+	int A, A1, B, B1;
+
+	A = a;
+	A1 = -a;
+	B = b;
+	B1 = -b;
+
+}
+
+double Elisse::asseMaggiore(int a)
+{
+
+	return 2 * a;
+}
+
+double Elisse::asseMinore(int b)
+{
+
+	return 2 * b;
+}
+
+void Iperbole::Coniche::vertice(int a, int b, int c)
+{
+	int A, A1, B, B1;
+
+	A = a;
+	A1 = -a;
+	B = b;
+	B1 = -b;
+
+}
+
+void Iperbole::asintoti(int a, int b, int c, int x, int y)
+{
+	y = -(b / a) * x;
+	y = b / a * x;
+}
+
+double Elisse::equazioneCart(int a, int b, int c, int x, int y)
+{
+	if (a > b)
+	{
+		return (x ^ 2 / a ^ 2) - (y ^ 2 / b ^ 2) - 1;
+	}
+	else
+	{ }
+}
+
