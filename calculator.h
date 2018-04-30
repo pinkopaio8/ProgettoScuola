@@ -13,7 +13,7 @@ public:
 	virtual double equazioneCartY(int a, int b, int c, int y) = 0;
 	virtual double interAssX(int a, int b, int c, int x) = 0;
 	virtual double interAssY(int a, int b, int c, int y) = 0;
-	virtual void vertice(int a, int b, int c);
+	virtual void vertice(int a, int b, int c); //non capisco perché dice che non è stata trovata quando c'è
 	//virtual double asse();  -----> non la utilizziamo
 	//virtual double direttrice(); -----> mi sta sul cazzo
 
@@ -47,6 +47,13 @@ public:
 		y = 0;
 		return y;
 	};
+
+	virtual void vertice(int a, int b, int c)
+	{
+		int A, B;
+		A = -(b / 2*a);
+		B = (4 * a * c - b ^ 2) / 4 * a;
+	}
 	// manca la funzione vertice
 
 
@@ -62,7 +69,7 @@ public:
 class Iperbole : public Coniche {
 
 public:
-	// manca equazione cartesiana X e Y
+	// manca equazione cartesiana X e Y Ema: L'equazione cart c'è, ma non per X e Y perché non esiste.
 	double interAssX(int a, int b, int c, int x)
 	{
 
