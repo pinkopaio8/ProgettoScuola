@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
@@ -8,19 +9,23 @@ using namespace std;
 class Coniche {
 public:
 	int a, b, c, x, y;
+	vector<string> tipo = {"Parabola", "Iperbole", "Elisse", "Circonferenza"};
+	vector<string>::iterator i;
+	i = tipo.begin();
 
-	//virtual double asseSimm() = 0; -----> ma perchè
+	Coniche(/*cost*/) {};
+	Coniche() {};
 	virtual double equazioneCartX(int a, int b, int c, int x) = 0;
 	virtual double equazioneCartY(int a, int b, int c, int y) = 0;
 	virtual double interAssX(int a, int b, int c) = 0;
 	virtual double interAssY(int a, int b, int c) = 0;
-	virtual void vertice(int a, int b, int c); //non capisco perché dice che non è stata trovata quando c'è
-	//virtual double asse();  -----> non la utilizziamo
-	//virtual double direttrice(); -----> mi sta sul cazzo
+	virtual void vertice(int a, int b, int c);
 
 
-	//Coniche() {}; ma seriamente
+};
 
+class Vector : public Coniche
+{
 
 };
 
@@ -56,7 +61,6 @@ public:
 		B = (4 * a * c - b ^ 2) / 4 * a;
 		cout << "I vertici sono: " << A << ", " << B << endl;
 	}
-	// manca la funzione vertice
 
 
 	virtual double direttrice(int a, int b, int c)
@@ -71,7 +75,6 @@ public:
 class Iperbole : public Coniche {
 
 public:
-	// manca equazione cartesiana X e Y; Ema: L'equazione cart c'è, ma non per X e Y perché non esiste.
 	double equazioneCartX(int a, int b, int c, int x) {
 
 	};
@@ -188,8 +191,8 @@ public:
 
 };
 
-//istream& cin >>
-
-
+enum class Retta {
+	Parabola = 1, Iperbole, Elisse, Circonferenza
+};
 
 

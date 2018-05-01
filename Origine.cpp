@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <math.h>
 #include "calculator.h"
+#include <vector>
 
 using namespace std;
 
@@ -14,16 +15,12 @@ int main() {
 	Circonferenza circonferenza();
 
 	int a, b, c, x, y;
-
-	string temp;
-
+	
 	cout << "Questo è un software di Calcolo di un tipo di retta." << endl;
 	cout << "In base ai dati inseriti, e alla scelta effettuata, verranno calcolati i suoi attributi." << endl;
 	cout << "Dunque, di che tipo di retta si tratta? Risposta: ";
 
-	int choice;
-
-	cin >> choice;
+	string choice;
 
 	switch (choice)
 	{
