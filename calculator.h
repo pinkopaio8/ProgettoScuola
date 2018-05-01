@@ -9,10 +9,11 @@ using namespace std;
 class Coniche {
 public:
 	int a, b, c, x, y;
-	
-	
+	vector<string> tipo = {"Parabola", "Iperbole", "Elisse", "Circonferenza"};
+	vector<string>::iterator i;
+	i = tipo.begin();
 
-	//Coniche(/*cost*/) {};
+	Coniche(/*cost*/) {};
 	Coniche() {};
 	virtual double equazioneCartX(int a, int b, int c, int x) = 0;
 	virtual double equazioneCartY(int a, int b, int c, int y) = 0;
@@ -23,7 +24,10 @@ public:
 
 };
 
+class Vector : public Coniche
+{
 
+};
 
 
 class Parabole : public Coniche
@@ -53,7 +57,7 @@ public:
 	virtual void vertice(int a, int b, int c)
 	{
 		int A, B;
-		A = -(b / 2 * a);
+		A = -(b / 2*a);
 		B = (4 * a * c - b ^ 2) / 4 * a;
 		cout << "I vertici sono: " << A << ", " << B << endl;
 	}
@@ -114,7 +118,7 @@ public:
 		y1 = b / a * x;
 		cout << "Gli asintoti sono: " << y1 << " e " << y << endl;
 
-
+	
 	};
 	virtual double equazioneCart(int a, int b, int c)
 	{
@@ -183,7 +187,6 @@ public:
 	virtual double equazioneCart() {};
 	virtual double Area() {};
 	virtual double circonferenza() {};
-
 
 
 };
